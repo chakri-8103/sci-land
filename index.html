@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Land Project Exhibition</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 5px 0 0;
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #2a2a40;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #ff6f61;
+            border-bottom: 2px solid #ff6f61;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #393960;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #f4f4f9;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #d1d1e1;
+            opacity: 0.8;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #e65b50;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1a1a28;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sci-Land Project Exhibition</h1>
+    <p>"Unleash Your Creativity and Innovation!"</p>
+</header>
+
+<div class="container">
+    <section class="about">
+        <h2>About Sci-Land</h2>
+        <p>Sci-Land is a platform for our college students to exhibit groundbreaking projects and innovative ideas in a variety of fields, fostering creativity and collaboration.</p>
+    </section>
+
+    <section class="categories">
+        <h2>Project Categories</h2>
+        <div class="categories">
+            <div class="card">
+                <h3>Computers</h3>
+                <p>Present groundbreaking work in software, hardware, and AI.</p>
+            </div>
+            <div class="card">
+                <h3>AI</h3>
+                <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
+            </div>
+            <div class="card">
+                <h3>Physics</h3>
+                <p>Dive into experiments and theories exploring the laws of nature.</p>
+            </div>
+            <div class="card">
+                <h3>Mathematics</h3>
+                <p>Explore innovative approaches to abstract and applied math problems.</p>
+            </div>
+            <div class="card">
+                <h3>Chemistry</h3>
+                <p>Showcase exciting experiments and chemical discoveries.</p>
+            </div>
+            <div class="card">
+                <h3>Electronics</h3>
+                <p>Present creative solutions involving circuits, robotics, and more.</p>
+            </div>
+            <div class="card">
+                <h3>Statistics</h3>
+                <p>Demonstrate the power of data and its practical applications.</p>
+            </div>
+            <div class="card">
+                <h3>Data Science</h3>
+                <p>Showcase innovations in data analysis, AI, and visualization.</p>
+            </div>
+            <div class="card">
+                <h3>Commerce</h3>
+                <p>Present innovative ideas in business, trade, and economics.</p>
+            </div>
+            <div class="card">
+                <h3>Life Science</h3>
+                <p>Delve into the wonders of biology and the study of life.</p>
+            </div>
+            <div class="card">
+                <h3>Microbiology</h3>
+                <p>Showcase research and projects on the microscopic world.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries and details, reach out to our event coordinators.</p>
+        <button>Contact Now</button>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Sci-Land | Crafted by Our College Students</p>
+</footer>
+
+</body>
+</html>
