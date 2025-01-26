@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Land Project Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e9e9e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: #0f0f1a;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            border: 2px solid #0cc0df;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-header h1 {
+            color: #0cc0df;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .form-header p {
+            color: #8a8a8a;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #0cc0df;
+            font-weight: 600;
+        }
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #2a2a40;
+            background-color: #1a1a2e;
+            color: #e9e9e9;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: #0cc0df;
+            box-shadow: 0 0 10px rgba(12,192,223,0.3);
+        }
+        .team-members {
+            background-color: #16213e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #0cc0df;
+            color: #0f0f1a;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #09a1b8;
+        }
+        .member-section {
+            background-color: #16213e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .member-section h3 {
+            color: #0cc0df;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function updateMemberFields() {
+            const groupSize = parseInt(document.getElementById('groupSize').value);
+            const memberFieldsContainer = document.getElementById('memberFields');
+            memberFieldsContainer.innerHTML = '';
+
+            for (let i = 0; i < groupSize; i++) {
+                const memberSection = document.createElement('div');
+                memberSection.classList.add('member-section');
+                memberSection.innerHTML = `
+                    <h3>${i === 0 ? 'Team Leader' : `Team Member ${i}`} Details</h3>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="member${i}Name" placeholder="${i === 0 ? 'Team Leader' : `Member ${i}`} Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" name="member${i}Mobile" placeholder="${i === 0 ? 'Team Leader' : `Member ${i}`} Mobile Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="member${i}Email" placeholder="${i === 0 ? 'Team Leader' : `Member ${i}`} Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>SUC ID</label>
+                        <input type="text" name="member${i}SUC" placeholder="${i === 0 ? 'Team Leader' : `Member ${i}`} SUC ID" required>
+                    </div>
+                `;
+                memberFieldsContainer.appendChild(memberSection);
+            }
+        }
+
+        // Handle form submission
+        async function submitForm(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Project registered successfully!');
+            } else {
+                alert('Error registering project.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Sci-Land Project Registration</h1>
+            <p>Submit your innovative project for the exhibition</p>
+        </div>
+        <form onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="projectName">Project Name</label>
+                <input type="text" id="projectName" name="projectName" required placeholder="Enter your project name">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Project Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Computers">Computers</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="AI">Artificial Intelligence</option>
+                    <option value="Life Science">Life Science</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="groupSize">Group Size</label>
+                <select id="groupSize" name="groupSize" onchange="updateMemberFields()" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div id="memberFields"></div>
+
+            <button type="submit" class="submit-btn">Register Project</button>
+        </form>
+    </div>
+    <script>
+        // Trigger initial update to show team leader fields by default
+        updateMemberFields();
+    </script>
+</body>
+</html>

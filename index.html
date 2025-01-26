@@ -89,11 +89,41 @@
             opacity: 0.8;
         }
 
-        .contact {
-            text-align: center;
+        .contact-boxes {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .contact button {
+        .contact, .register {
+            width: 48%;
+            background-color: #393960;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact:hover, .register:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact h3, .register h3 {
+            font-size: 2rem;
+            color: #ff6f61;
+            margin-bottom: 15px;
+        }
+
+        .contact p, .register p {
+            font-size: 1rem;
+            color: #f4f4f9;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .contact button, .register button {
             background-color: #ff6f61;
             color: white;
             border: none;
@@ -105,7 +135,7 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .contact button:hover {
+        .contact button:hover, .register button:hover {
             background-color: #e65b50;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
         }
@@ -122,6 +152,11 @@
             font-size: 0.9rem;
         }
     </style>
+    <script>
+        function showRegisterPage() {
+            window.location.href = "register.html";
+        }
+    </script>
 </head>
 <body>
 
@@ -140,16 +175,12 @@
         <h2>Project Categories</h2>
         <div class="categories">
             <div class="card">
-                <h3>Computers</h3>
-                <p>Present groundbreaking work in software, hardware, and AI.</p>
-            </div>
-            <div class="card">
-                <h3>AI</h3>
-                <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
-            </div>
-            <div class="card">
                 <h3>Physics</h3>
                 <p>Dive into experiments and theories exploring the laws of nature.</p>
+            </div>
+            <div class="card">
+                <h3>Computers</h3>
+                <p>Present groundbreaking work in software, hardware, and AI.</p>
             </div>
             <div class="card">
                 <h3>Mathematics</h3>
@@ -172,6 +203,10 @@
                 <p>Showcase innovations in data analysis, AI, and visualization.</p>
             </div>
             <div class="card">
+                <h3>AI</h3>
+                <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
+            </div>
+            <div class="card">
                 <h3>Commerce</h3>
                 <p>Present innovative ideas in business, trade, and economics.</p>
             </div>
@@ -186,16 +221,23 @@
         </div>
     </section>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries and details, reach out to our event coordinators.</p>
-        <button>Contact Now</button>
+    <section class="contact-boxes">
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>For inquiries and details, reach out to our event coordinators.</p>
+            <button onclick="showRegisterPage()">Contact Us</button>
+        </div>
+
+        <div class="register">
+            <h3>Register Your Project</h3>
+            <p>Register your project for the exhibition today and showcase your innovation!</p>
+            <button onclick="showRegisterPage()">Register Now</button>
+        </div>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2025 Sci-Land | Crafted by Our College Students</p>
+    <p>© Sci-Land 2025 | Organized by Aditya</p>
 </footer>
-
 </body>
 </html>
