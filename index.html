@@ -53,6 +53,7 @@
             border-bottom: 2px solid #ff6f61;
             padding-bottom: 10px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .categories {
@@ -102,6 +103,7 @@
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -124,20 +126,27 @@
         }
 
         .contact button, .register button {
-            background-color: #ff6f61;
+            background: linear-gradient(135deg, #ff6f61, #ff4757);
             color: white;
             border: none;
             padding: 15px 30px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         }
 
         .contact button:hover, .register button:hover {
-            background-color: #e65b50;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #ff4757, #ff2f45);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact button:active, .register button:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         footer {
@@ -151,8 +160,54 @@
         footer p {
             font-size: 0.9rem;
         }
+
         .about {
             text-align: center;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .categories {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .contact-boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact, .register {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact button, .register button {
+                width: 100%;
+                padding: 18px;
+                font-size: 1.2rem;
+            }
         }
     </style>
     <script>
@@ -174,69 +229,29 @@
 <div class="container">
     <section class="about">
         <h2>About Sci-Land</h2>
-        <p>Sci-Land is a platform for our college students to exhibit groundbreaking projects and innovative ideas in a variety of fields, fostering creativity and collaboration.</p>
+        <p>Sci-Land is a platform for students to showcase innovative projects across various fields, promoting creativity and collaboration.</p>
     </section>
 
     <section class="categories">
         <h2>Project Categories</h2>
         <div class="categories">
-            <div class="card">
-                <h3>Physics</h3>
-                <p>Dive into experiments and theories exploring the laws of nature.</p>
-            </div>
-            <div class="card">
-                <h3>Computers</h3>
-                <p>Present groundbreaking work in software, hardware, and AI.</p>
-            </div>
-            <div class="card">
-                <h3>Mathematics</h3>
-                <p>Explore innovative approaches to abstract and applied math problems.</p>
-            </div>
-            <div class="card">
-                <h3>Chemistry</h3>
-                <p>Showcase exciting experiments and chemical discoveries.</p>
-            </div>
-            <div class="card">
-                <h3>Electronics</h3>
-                <p>Present creative solutions involving circuits, robotics, and more.</p>
-            </div>
-            <div class="card">
-                <h3>Statistics</h3>
-                <p>Demonstrate the power of data and its practical applications.</p>
-            </div>
-            <div class="card">
-                <h3>Data Science</h3>
-                <p>Showcase innovations in data analysis, AI, and visualization.</p>
-            </div>
-            <div class="card">
-                <h3>AI</h3>
-                <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
-            </div>
-            <div class="card">
-                <h3>Commerce</h3>
-                <p>Present innovative ideas in business, trade, and economics.</p>
-            </div>
-            <div class="card">
-                <h3>Life Science</h3>
-                <p>Delve into the wonders of biology and the study of life.</p>
-            </div>
-            <div class="card">
-                <h3>Microbiology</h3>
-                <p>Showcase research and projects on the microscopic world.</p>
-            </div>
+            <div class="card"><h3>Physics</h3><p>Explore experiments and theories in the world of physics.</p></div>
+            <div class="card"><h3>Computers</h3><p>Showcase your work in software, AI, and more.</p></div>
+            <div class="card"><h3>Mathematics</h3><p>Innovate with abstract and applied math solutions.</p></div>
+            <div class="card"><h3>Chemistry</h3><p>Demonstrate exciting chemical discoveries.</p></div>
         </div>
     </section>
 
     <section class="contact-boxes">
         <div class="contact">
             <h3>Contact Us</h3>
-            <p>For inquiries and details, reach out to our event coordinators.</p>
+            <p>For inquiries, reach out to our event coordinators.</p>
             <button onclick="showContactPage()">Contact Us</button>
         </div>
 
         <div class="register">
             <h3>Register Your Project</h3>
-            <p>Register your project for the exhibition today and showcase your innovation!</p>
+            <p>Sign up today and showcase your project at Sci-Land!</p>
             <button onclick="showRegisterPage()">Register Now</button>
         </div>
     </section>
@@ -245,5 +260,6 @@
 <footer>
     <p>© Sci-Land 2025 | Organized by Aditya</p>
 </footer>
+
 </body>
 </html>

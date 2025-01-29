@@ -16,7 +16,7 @@
         }
 
         h1 {
-            color:green;
+            color: green;
             font-weight: 600;
             animation: fadeInDown 1s ease-out;
         }
@@ -28,42 +28,42 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeInUp 1s ease-out;
         }
 
-        .contact-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        .contact-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .contact-details {
+        .contact-card {
             background: rgba(248, 249, 250, 0.9);
             padding: 20px;
             border-radius: 10px;
-            margin-top: 30px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeIn 1.5s ease-out;
         }
 
-        .contact-details h5 {
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-card h5 {
             color: #2c3e50;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
-        .contact-details p {
+        .contact-card p {
             color: #495057;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-            padding: 5px;
-        }
-
-        .contact-details p:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
+            margin: 5px 0;
         }
 
         .footer {
@@ -79,27 +79,11 @@
         .footer a {
             color: #ffd700;
             text-decoration: none;
-            position: relative;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
             color: #fff;
-        }
-
-        .footer a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #ffd700;
-            transition: width 0.3s ease;
-        }
-
-        .footer a:hover::after {
-            width: 100%;
         }
 
         @keyframes fadeIn {
@@ -108,25 +92,13 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -138,13 +110,30 @@
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfcLdmGBK1aboBr1aLFRyfGhbeu9ncX-q-yqJDS30kL1aZQ5g/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
 
-        <div class="contact-details text-center">
-            <h5>Contact Details</h5>
-            <p>Address: Lakshmi Narayana Nagar, Kakinada</p>
-            <p>Phone: +91 79812 65187</p>
-            <p>Email: prasadriskrider@gmail.com</p>
+        <!-- Contact Cards (Updated Layout) -->
+        <div class="contact-cards">
+            <div class="contact-card">
+                <h5>Prasad</h5>
+                <p>Phone: +91 79812 65187</p>
+                <p>Email: prasadriskrider@gmail.com</p>
+            </div>
+
+            <div class="contact-card">
+                <h5>Chakradhar</h5>
+                <p>Phone: +91 79812 65187</p>
+                <p>Email: janapaneedichakradhar678@gmail.com</p>
+            </div>
+
+            <div class="contact-card">
+                <h5>Varaprasad</h5>
+                <p>Phone: +91 87654 32109</p>
+                <p>Email: varaprasad@gmail.com</p>
+            </div>
         </div>
-        <div>
+
+        <div class="footer">
+            <p>&copy; 2025 Contact Us Page. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
     </div>
 </body>
 </html>
