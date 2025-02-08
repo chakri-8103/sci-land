@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Land Project Exhibition</title>
     <style>
+        /* Original Sci-Land Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -165,7 +166,108 @@
             text-align: center;
         }
 
-        /* Responsive Design for Mobile */
+        /* Notification System Styles */
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: #4CAF50;
+        }
+
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+
+        .toggle-switch.active::before {
+            transform: translateX(30px);
+        }
+
+        .toggle-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .popup-container {
+            position: fixed;
+            right: 20px;
+            width: 320px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s ease-in-out;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            opacity: 0;
+            transform: translateX(100px);
+            z-index: 1000;
+        }
+
+        .popup-container:hover {
+            transform: translateX(0) scale(1.02);
+        }
+
+        .popup-container img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .popup-content {
+            flex: 1;
+        }
+
+        .popup-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .popup-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .top-right { top: -100px; }
+        .bottom-right { bottom: -100px; }
+
+        .show-top { top: 20px !important; opacity: 1; transform: translateX(0); }
+        .show-bottom { bottom: 20px !important; opacity: 1; transform: translateX(0); }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2rem;
@@ -208,101 +310,208 @@
                 padding: 18px;
                 font-size: 1.2rem;
             }
+
+            .toggle-container {
+                top: 10px;
+                left: 10px;
+                padding: 10px;
+            }
+
+            .popup-container {
+                width: 90%;
+                right: 5%;
+                left: 5%;
+            }
         }
     </style>
+</head>
+<body>
+    <!-- Notification Toggle -->
+    <div class="toggle-container">
+        <div class="toggle-switch" id="notificationToggle" onclick="toggleNotifications()"></div>
+        <span class="toggle-label">Notifications</span>
+    </div>
+
+    <!-- Notification Popups -->
+    <div class="popup-container top-right" id="popup1" onclick="redirectToFirst()">
+        <img src="/api/placeholder/50/50" alt="User">
+        <div class="popup-content">
+            <div class="popup-title">Pending</div>
+            <div class="popup-text">pending page</div>
+        </div>
+    </div>
+
+    <div class="popup-container bottom-right" id="popup2" onclick="redirectToSecond()">
+        <img src="/api/placeholder/50/50" alt="User">
+        <div class="popup-content">
+            <div class="popup-title">Contact Details</div>
+            <div class="popup-text">Yoy have any changes in this website just click It</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <header>
+        <h1>Sci-Land Project Exhibition</h1>
+        <p>"Unleash Your Creativity and Innovation!"</p>
+    </header>
+
+    <div class="container">
+        <section class="about">
+            <h2>About Sci-Land</h2>
+            <p>Sci-Land is a platform for students to showcase innovative projects across various fields, promoting creativity and collaboration.</p>
+        </section>
+
+        <section class="categories">
+            <h2>Project Categories</h2>
+            <div class="categories">
+                <div class="card">
+                    <h3>Chemistry</h3>
+                    <p>Showcase exciting experiments and chemical discoveries.</p>
+                </div>
+                <div class="card">
+                    <h3>Physics</h3>
+                    <p>Dive into experiments and theories exploring the laws of nature.</p>
+                </div>
+                <div class="card">
+                    <h3>Computers</h3>
+                    <p>Present groundbreaking work in software, hardware, and AI.</p>
+                </div>
+                <div class="card">
+                    <h3>Mathematics</h3>
+                    <p>Explore innovative approaches to abstract and applied math problems.</p>
+                </div>
+                <div class="card">
+                    <h3>Electronics</h3>
+                    <p>Present creative solutions involving circuits, robotics, and more.</p>
+                </div>
+                <div class="card">
+                    <h3>Statistics</h3>
+                    <p>Demonstrate the power of data and its practical applications.</p>
+                </div>
+                <div class="card">
+                    <h3>Data Science</h3>
+                    <p>Showcase innovations in data analysis, AI, and visualization.</p>
+                </div>
+                <div class="card">
+                    <h3>AI</h3>
+                    <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
+                </div>
+                <div class="card">
+                    <h3>Commerce</h3>
+                    <p>Present innovative ideas in business, trade, and economics.</p>
+                </div>
+                <div class="card">
+                    <h3>Life Science</h3>
+                    <p>Delve into the wonders of biology and the study of life.</p>
+                </div>
+                <div class="card">
+                    <h3>Microbiology</h3>
+                    <p>Showcase research and projects on the microscopic world.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-boxes">
+            <div class="contact">
+                <h3>Event Coordinators</h3>
+                <p>The event coordinators.</p>
+                <button onclick="showEntryPage()">Event coordinators</button>
+            </div>
+
+            <div class="register">
+                <h3>Register Your Project</h3>
+                <p>Sign up today and showcase your project at Sci-Land!</p>
+                <button onclick="showRegisterPage()">Register Now</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© Sci-Land 2025 | Organized by Aditya</p>
+    </footer>
+
     <script>
+        // Navigation Functions
         function showRegisterPage() {
             window.location.href = "register.html";
         }
+    
         function showContactPage() {
             window.location.href = "contact.html";
         }
-    function showEntryPage() {
-        window.location.href = "entry.html";
-    }
+    
+        function showEntryPage() {
+            window.location.href = "entry.html";
+        }
+    
+        function redirectToFirst() {
+            window.location.href = "first.html";
+        }
+    
+        function redirectToSecond() {
+            window.location.href = ".html";
+        }
+    
+        // Notification System
+        let notificationsEnabled = false;
+        let notificationInterval;
+    
+        function toggleNotifications() {
+            const toggleButton = document.getElementById('notificationToggle');
+            notificationsEnabled = !notificationsEnabled;
+    
+            if (notificationsEnabled) {
+                toggleButton.classList.add('active');
+                startAlternatingNotifications();
+            } else {
+                toggleButton.classList.remove('active');
+                stopNotifications();
+                hideAllPopups();
+            }
+        }
+    
+        function startAlternatingNotifications() {
+            if (!notificationsEnabled) return;
+    
+            function showNotifications() {
+                if (!notificationsEnabled) return;
+                
+                let popup1 = document.getElementById("popup1");
+                let popup2 = document.getElementById("popup2");
+    
+                // Show First Notification
+                popup1.classList.add("show-top");
+                setTimeout(() => {
+                    popup1.classList.remove("show-top");
+    
+                    // Show Second Notification After First Finishes
+                    setTimeout(() => {
+                        popup2.classList.add("show-bottom");
+    
+                        setTimeout(() => {
+                            popup2.classList.remove("show-bottom");
+                        }, 5000); // Hide Second Notification after 5s
+    
+                    }, 2000); // Delay before showing second notification
+    
+                }, 5000); // Hide First Notification after 5s
+            }
+    
+            // Run once immediately and then repeat every 12 seconds
+            showNotifications();
+            notificationInterval = setInterval(showNotifications, 12000);
+        }
+    
+        function stopNotifications() {
+            clearInterval(notificationInterval);
+        }
+    
+        function hideAllPopups() {
+            document.getElementById("popup1").classList.remove("show-top");
+            document.getElementById("popup2").classList.remove("show-bottom");
+        }
     </script>
-</head>
-<body>
-
-<header>
-    <h1>Sci-Land Project Exhibition</h1>
-    <p>"Unleash Your Creativity and Innovation!"</p>
-</header>
-
-<div class="container">
-    <section class="about">
-        <h2>About Sci-Land</h2>
-        <p>Sci-Land is a platform for students to showcase innovative projects across various fields, promoting creativity and collaboration.</p>
-    </section>
-
-    <section class="categories">
-        <h2>Project Categories</h2>
-        <div class="categories">
-            <div class="card">
-                <h3>Chemistry</h3>
-                <p>Showcase exciting experiments and chemical discoveries.</p>
-            </div>
-            <div class="card">
-                <h3>Physics</h3>
-                <p>Dive into experiments and theories exploring the laws of nature.</p>
-            </div>
-            <div class="card">
-                <h3>Computers</h3>
-                <p>Present groundbreaking work in software, hardware, and AI.</p>
-            </div>
-            <div class="card">
-                <h3>Mathematics</h3>
-                <p>Explore innovative approaches to abstract and applied math problems.</p>
-            </div>
-            <div class="card">
-                <h3>Electronics</h3>
-                <p>Present creative solutions involving circuits, robotics, and more.</p>
-            </div>
-            <div class="card">
-                <h3>Statistics</h3>
-                <p>Demonstrate the power of data and its practical applications.</p>
-            </div>
-            <div class="card">
-                <h3>Data Science</h3>
-                <p>Showcase innovations in data analysis, AI, and visualization.</p>
-            </div>
-            <div class="card">
-                <h3>AI</h3>
-                <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
-            </div>
-            <div class="card">
-                <h3>Commerce</h3>
-                <p>Present innovative ideas in business, trade, and economics.</p>
-            </div>
-            <div class="card">
-                <h3>Life Science</h3>
-                <p>Delve into the wonders of biology and the study of life.</p>
-            </div>
-            <div class="card">
-                <h3>Microbiology</h3>
-                <p>Showcase research and projects on the microscopic world.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-boxes">
-        <div class="contact">
-            <h3>Contact Us</h3>
-            <p> The event coordinators.</p>
-            <button onclick="showEntryPage()">Event coordinators</button>
-        </div>
-
-        <div class="register">
-            <h3>Register Your Project</h3>
-            <p>Sign up today and showcase your project at Sci-Land!</p>
-            <button onclick="showRegisterPage()">Register Now</button>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <p>© Sci-Land 2025 | Organized by Aditya</p>
-</footer>
+    
 
 </body>
 </html>
