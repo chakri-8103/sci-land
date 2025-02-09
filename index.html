@@ -322,6 +322,22 @@
                 right: 5%;
                 left: 5%;
             }
+            .image-display {
+                display: none; /* Initially hidden */
+                text-align: center;
+                margin-top: 20px;
+                width: 100%;
+            }
+            
+            .image-display img {
+                width: 90%; /* Make images responsive */
+                max-width: 600px; /* Set a maximum width */
+                height: auto;
+                margin: 10px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+            
         }
     </style>
 </head>
@@ -361,55 +377,60 @@
             <p>Sci-Land is a platform for students to showcase innovative projects across various fields, promoting creativity and collaboration.</p>
         </section>
 
-        <section class="categories">
-            <h2>Project Categories</h2>
-            <div class="categories">
-                <div class="card">
+        <div class="container">
+            <section class="categories">
+                <div class="card" onclick="showImages('image.png', 'image.png')">
                     <h3>Chemistry</h3>
                     <p>Showcase exciting experiments and chemical discoveries.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('physics1.jpg', 'physics2.jpg')">
                     <h3>Physics</h3>
                     <p>Dive into experiments and theories exploring the laws of nature.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('computers1.jpg', 'computers2.jpg')">
                     <h3>Computers</h3>
                     <p>Present groundbreaking work in software, hardware, and AI.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('math1.jpg', 'math2.jpg')">
                     <h3>Mathematics</h3>
                     <p>Explore innovative approaches to abstract and applied math problems.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('electronics1.jpg', 'electronics2.jpg')">
                     <h3>Electronics</h3>
                     <p>Present creative solutions involving circuits, robotics, and more.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('statistics1.jpg', 'statistics2.jpg')">
                     <h3>Statistics</h3>
                     <p>Demonstrate the power of data and its practical applications.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('datascience1.jpg', 'datascience2.jpg')">
                     <h3>Data Science</h3>
                     <p>Showcase innovations in data analysis, AI, and visualization.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('ai1.jpg', 'ai2.jpg')">
                     <h3>AI</h3>
                     <p>Explore the latest advancements in artificial intelligence and machine learning.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('commerce1.jpg', 'commerce2.jpg')">
                     <h3>Commerce</h3>
                     <p>Present innovative ideas in business, trade, and economics.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('lifescience1.jpg', 'lifescience2.jpg')">
                     <h3>Life Science</h3>
                     <p>Delve into the wonders of biology and the study of life.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="showImages('microbiology1.jpg', 'microbiology2.jpg')">
                     <h3>Microbiology</h3>
                     <p>Showcase research and projects on the microscopic world.</p>
                 </div>
+            </section>
+    
+            <div class="image-display" id="imageDisplay">
+                <img id="img1" src="" alt="">
+                <img id="img2" src="" alt="">
             </div>
-        </section>
+        </div>
+    
 
         <section class="contact-boxes">
             <div class="contact">
@@ -431,6 +452,20 @@
     </footer>
 
     <script>
+        function showImages(imageSrc1, imageSrc2) {
+            let img1 = document.getElementById("img1");
+            let img2 = document.getElementById("img2");
+            let imageDisplay = document.getElementById("imageDisplay");
+        
+            // Set image sources and ensure the section is visible
+            img1.src = imageSrc1;
+            img2.src = imageSrc2;
+        
+            imageDisplay.style.display = "block"; // Show the images
+            imageDisplay.scrollIntoView({ behavior: "smooth" }); // Scroll to the image section
+        }
+        
+        
         // Navigation Functions
         function showRegisterPage() {
             window.location.href = "register.html";
@@ -445,7 +480,7 @@
         }
     
         function redirectToFirst() {
-            window.location.href = "first.html";
+            window.location.href = "pop.html";
         }
     
         function redirectToSecond() {
