@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemistry Department Registration</title>
+    <title>Electronics Department Registration</title>
     <style>
         * {
             margin: 0;
@@ -118,55 +118,6 @@
         .error {
             border-color: #ff4444 !important;
         }
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-        
-        .chem-element {
-            position: absolute;
-            font-size: 24px;
-            font-weight: bold;
-            color: #0cc0df;
-            opacity: 0.8;
-            animation: float 4s infinite ease-in-out;
-        }
-        
-        /* Original elements */
-        #h2o { top: 10%; left: 20%; animation-delay: 0s; }
-        #co2 { top: 30%; left: 85%; animation-delay: 0.3s; }
-        #na { top: 60%; left: 40%; animation-delay: 0.6s; }
-        #o2 { top: 80%; left: 10%; animation-delay: 0.9s; }
-        
-        /* New elements */
-        #h2so4 { top: 15%; left: 90%; animation-delay: 1.2s; }
-        #ch4 { top: 50%; left: 80%; animation-delay: 1.5s; }
-        #nh3 { top: 75%; left: 30%; animation-delay: 1.8s; }
-        #c6h12o6 { top: 50%; left: 90%; animation-delay: 2.1s; } /* Glucose */
-        #cl2 { top: 40%; left: 10%; animation-delay: 2.4s; } /* Chlorine Gas */
-        #nacl { top: 65%; left: 50%; animation-delay: 2.7s; } /* Sodium Chloride */
-        
-
-        @keyframes wave {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
-            100% { transform: translateY(0); }
-        }
-        
-        .dna {
-            position: absolute;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #0cc0df;
-            animation: wave 3s infinite ease-in-out;
-        }
-        
-        /* Position different DNA strands at various locations */
-        #dna1 { top: 10%; left: 5%; animation-delay: 0s; }
-        #dna2 { top: 80%; left: 80%; animation-delay: 0.5s; }
-        
-        
     </style>
     <script>
         function validateEmail(email) {
@@ -336,21 +287,6 @@
                 <h1>Sci-Land Project Registration</h1>
                 <p>Submit your innovative project for the exhibition</p>
             </div>
-            <div class="chem-element" id="h2o">H₂O</div>
-            <div class="chem-element" id="co2">CO₂</div>
-            <div class="chem-element" id="na">Na⁺</div>
-            <div class="chem-element" id="o2">O₂</div>
-            <div class="chem-element" id="h2so4">H₂SO₄</div>
-            <div class="chem-element" id="ch4">CH₄</div>
-            <div class="chem-element" id="nh3">NH₃</div>
-            <div class="chem-element" id="c6h12o6">C₆H₁₂O₆</div> <!-- Glucose -->
-            <div class="chem-element" id="cl2">Cl₂</div>
-            <div class="chem-element" id="nacl">NaCl</div> <!-- Salt -->
-
-            <div class="dna" id="dna1">🧬</div>
-            <div class="dna" id="dna2">🧬</div>
-
-
             <form onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label for="projectName">Project Name</label>
