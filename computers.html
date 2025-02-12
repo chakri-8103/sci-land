@@ -118,6 +118,54 @@
         .error {
             border-color: #ff4444 !important;
         }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        .icon {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            color: #0cc0df;
+            opacity: 0.8;
+            animation: float 4s infinite ease-in-out;
+        }
+        
+        /* Original elements */
+        #h2o { top: 10%; left: 20%; animation-delay: 0s; }
+        #co2 { top: 30%; left: 85%; animation-delay: 0.3s; }
+        #na { top: 60%; left: 40%; animation-delay: 0.6s; }
+        #o2 { top: 80%; left: 10%; animation-delay: 0.9s; }
+        
+        /* New elements */
+        #h2so4 { top: 15%; left: 90%; animation-delay: 1.2s; }
+        #ch4 { top: 50%; left: 80%; animation-delay: 1.5s; }
+        #nh3 { top: 75%; left: 30%; animation-delay: 1.8s; }
+        #c6h12o6 { top: 50%; left: 90%; animation-delay: 2.1s; } /* Glucose */
+        #cl2 { top: 40%; left: 10%; animation-delay: 2.4s; } /* Chlorine Gas */
+        #nacl { top: 65%; left: 50%; animation-delay: 2.7s; } /* Sodium Chloride */
+        
+
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .dna {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0cc0df;
+            animation: wave 3s infinite ease-in-out;
+        }
+        
+        /* Position different DNA strands at various locations */
+        #dna1 { top: 10%; left: 5%; animation-delay: 0s; }
+        #dna2 { top: 80%; left: 80%; animation-delay: 0.5s; }
+        
     </style>
     <script>
         function validateEmail(email) {
@@ -276,6 +324,8 @@
                 console.error('Error:', error);
                 alert('Error submitting form. Please try again.');
             }
+            
+            
         }
     </script>
 </head>
@@ -286,6 +336,19 @@
                 <h1>Sci-Land Project Registration</h1>
                 <p>Submit your innovative project for the exhibition</p>
             </div>
+
+
+            <div class="icon" id="h2o">💻</div>
+            <div class="icon" id="co2">🖥</div>
+            <div class="icon" id="na">⌨</div>
+            <div class="icon" id="o2">🖱</div>
+            <div class="icon" id="h2so4">🌐</div>
+            <div class="icon" id="ch4">📡</div>
+            <div class="icon" id="nh3">101</div>
+            <div class="icon" id="c6h12o6">💾</div>
+            <div class="icon" id="cl2">📁</div>
+            <div class="icon" id="nacl">001</div> 
+
             <form onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label for="projectName">Project Name</label>
