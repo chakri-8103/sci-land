@@ -41,10 +41,18 @@
             object-fit: cover;
         }
 
+        .controls-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 50%;
+        }
+
         .controls {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
             gap: 20px;
         }
 
@@ -68,53 +76,114 @@
             background: white;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
+
+        .play-button {
+            padding: 10px 20px;
+            background-color:white ;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: gray;
+        }
+
+        .controls-container {
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .arrow:disabled {
+            background: rgba(200, 200, 200, 0.5);
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
     <div class="slider-container">
         <div class="slider" id="slider">
-            <div class="slide"><img src="image/image1.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image2.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image3.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image4.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image5.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image6.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image7.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image8.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image9.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image10.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image11.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image12.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image13.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image14.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image15.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image16.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image17.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image18.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image19.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image20.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image21.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image22.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image23.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image24.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image25.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="image/image26.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="image/image27.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image28.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image29.jpg" alt="Slide 3"></div>
-            <div class="slide"><img src="image/image30.jpg" alt="Slide 3"></div>
-
+            <div class="slide"><img src="image/DSC00007.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00008.JPG" alt="Slide 2"></div>
+            <div class="slide"><img src="image/DSC00009.JPG" alt="Slide 3"></div>
+            <div class="slide"><img src="image/DSC00010.JPG" alt="Slide 4"></div>
+            <div class="slide"><img src="image/DSC00011.JPG" alt="Slide 5"></div>
+            <div class="slide"><img src="image/DSC00012.JPG" alt="Slide 6"></div>
+            <div class="slide"><img src="image/DSC00013.JPG" alt="Slide 7"></div>
+            <div class="slide"><img src="image/DSC00014.JPG" alt="Slide 8"></div>
+            <div class="slide"><img src="image/DSC00015.JPG" alt="Slide 9"></div>
+            <div class="slide"><img src="image/DSC00016.JPG" alt="Slide 10"></div>
+            <div class="slide"><img src="image/DSC00017.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00018.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00019.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00020.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00021.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00022.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00023.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00024.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00025.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00026.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00027.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00028.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00029.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00030.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00031.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00032.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00033.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00034.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00035.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00036.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00037.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00038.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00039.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00040.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00041.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00042.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00043.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00044.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00045.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00046.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00047.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00048.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00049.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00050.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00051.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00052.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00053.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00054.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00055.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00056.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00057.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00058.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00059.JPG" alt="Slide 1"></div>
+            <div class="slide"><img src="image/DSC00060.JPG" alt="Slide 1"></div>
         </div>
     </div>
-    <div class="controls">
-        <button class="arrow prev" onclick="prevSlide()">❮</button>
-        <button class="arrow next" onclick="nextSlide()">❯</button>
+    
+    <div class="controls-container">
+        <div class="controls">
+            <button class="arrow prev" id="prevButton" onclick="prevSlide()">❮</button>
+            <button class="arrow next" id="nextButton" onclick="nextSlide()">❯</button>
+        </div>
+        <div class="controls">
+            <button class="play-button" id="playButton" onclick="togglePlay()">▶️</button>
+        </div>
+
     </div>
 
     <script>
         let currentIndex = 0;
         const slides = document.querySelectorAll(".slide");
         const totalSlides = slides.length;
+        let autoplayInterval;
+        let isPlaying = false;
 
         function nextSlide() {
             if (currentIndex < totalSlides - 1) {
@@ -127,6 +196,25 @@
             if (currentIndex > 0) {
                 currentIndex--;
                 document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            const playButton = document.getElementById("playButton");
+            const prevButton = document.getElementById("prevButton");
+            const nextButton = document.getElementById("nextButton");
+
+            if (isPlaying) {
+                playButton.innerHTML = "⏸️";
+                prevButton.disabled = true;
+                nextButton.disabled = true;
+                autoplayInterval = setInterval(nextSlide, 1000); // Move every 3 seconds
+            } else {
+                playButton.innerHTML = "▶️";
+                prevButton.disabled = false;
+                nextButton.disabled = false;
+                clearInterval(autoplayInterval);
             }
         }
     </script>

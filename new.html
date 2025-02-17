@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .arrow:hover {
+            background: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slide"><img src="image/image1.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image2.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image3.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image4.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image5.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image6.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image7.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image8.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image9.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image10.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image11.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image12.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image13.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image14.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image15.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image16.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image17.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image18.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image19.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image20.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image21.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image22.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image23.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image24.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image25.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="image/image26.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="image/image27.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image28.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image29.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="image/image30.jpg" alt="Slide 3"></div>
+
+        </div>
+    </div>
+    <div class="controls">
+        <button class="arrow prev" onclick="prevSlide()">❮</button>
+        <button class="arrow next" onclick="nextSlide()">❯</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+
+        function nextSlide() {
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                document.getElementById("slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        }
+    </script>
+</body>
+</html>
